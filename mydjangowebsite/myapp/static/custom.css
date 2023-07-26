@@ -1,0 +1,35 @@
+/* Custom styles for the homepage */
+.jumbotron {
+  background-color: #f8f8f8;
+  padding: 40px;
+}
+
+.jumbotron h1 {
+  color: #007bff;
+}
+
+.jumbotron p {
+  color: #666;
+}
+
+/* Custom styles for the navigation bar */
+.navbar {
+  background-color: #333;
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+/* Additional custom styles for other components or pages */
+
+/* Custom styles for dark mode */
+.dark-mode {
+    background-color: #333; /* Change this color to your preferred dark background */
+    color: #fff; /* Change this color to your preferred text color for dark mode */
+}
+

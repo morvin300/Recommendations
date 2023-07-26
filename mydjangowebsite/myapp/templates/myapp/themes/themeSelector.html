@@ -1,0 +1,64 @@
+<!-- Inside the <head> section of your HTML template -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SRE Implementation at TMS A</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Dark mode and theme options -->
+        <div class="theme-options text-right mt-2 position-fixed top-0 end-0">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Themes
+                </button>
+                <div class="dropdown-menu" aria-labelledby="themeDropdown">
+                    <label class="dropdown-item">
+                        <input class="form-check-input" type="radio" name="theme" value="light" checked> Light
+                    </label>
+                    <label class="dropdown-item">
+                        <input class="form-check-input" type="radio" name="theme" value="dark"> Dark
+                    </label>
+                    <!-- Add more theme options here with additional "label" elements -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <script>
+        // Function to handle theme changes
+        function setTheme(theme) {
+            const body = $('body');
+            if (theme === 'dark') {
+                body.addClass('dark-mode');
+            } else {
+                body.removeClass('dark-mode');
+            }
+
+            // Store the user's preferred theme in local storage
+            localStorage.setItem('preferredTheme', theme);
+        }
+
+        // Event listener to detect theme changes
+        $('input[name="theme"]').change(function () {
+            setTheme(this.value);
+        });
+
+        // Set the initial theme based on user preference (if any)
+        const userPreferredTheme = localStorage.getItem('preferredTheme');
+        if (userPreferredTheme) {
+            setTheme(userPreferredTheme);
+        }
+    </script>
+
+</body>
+</html>
+
